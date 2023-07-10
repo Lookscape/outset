@@ -24,7 +24,7 @@
 <!-- EVENT search_results_header_after -->
 
 <!-- IF .pagination or SEARCH_MATCHES or TOTAL_MATCHES or PAGE_NUMBER -->
-	<div class="action-bar bar-top">
+	<div class="action-bar bar-top d-flex justify-content-between flex-wrap my-1">
 
 	<!-- IF TOTAL_MATCHES > 0 -->
 		<div class="search-box" role="search">
@@ -41,16 +41,18 @@
 	<!-- ENDIF -->
 
 		<!-- EVENT search_results_searchbox_after -->
-
-		<div class="pagination d-flex flex-column justify-content-center">
-			<!-- IF U_MARK_ALL_READ --><a href="{U_MARK_ALL_READ}" class="mark-read" accesskey="m">{L_MARK_ALL_READ}</a> &bull;<!-- ENDIF -->
-			<p>{SEARCH_MATCHES}</p>
-			<!-- IF .pagination -->
-				<!-- INCLUDE pagination.html -->
-			<!-- ELSE -->
-			<p>{PAGE_NUMBER}</p>
-			<!-- ENDIF -->
+		<div class="d-flex flex-grow-1 justify-content-end align-items-center">
+			<div class="pagination d-flex flex-row align-items-center justify-content-center">
+				<!-- IF U_MARK_ALL_READ --><a href="{U_MARK_ALL_READ}" class="mark-read" accesskey="m">{L_MARK_ALL_READ}</a> &bull;<!-- ENDIF -->
+				<p class="mb-0 me-2">{SEARCH_MATCHES}</p>
+				<!-- IF .pagination -->
+					<!-- INCLUDE pagination.html -->
+				<!-- ELSE -->
+				<p>{PAGE_NUMBER}</p>
+				<!-- ENDIF -->
+			</div>
 		</div>
+		
 	</div>
 <!-- ENDIF -->
 
